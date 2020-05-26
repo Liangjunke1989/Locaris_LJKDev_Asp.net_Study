@@ -34,21 +34,17 @@ public class AddUser : IHttpHandler {
                 if (cmd.ExecuteNonQuery()>0)
                 {
                    // context.Response.Write();//输出
-                   context.Response.Redirect("UserInfoList.ashx");//实现页面的跳转 get请求
+                   context.Response.Redirect("UserInfoList.ashx");//实现：页面的跳转  get请求
                    //本质上也是向UserInfoList页面发送了一个Get请求
                 }
                 else
                 {
-                    context.Response.Write("错误！！！！");
+                    context.Response.Write("错误！！！！"); 
                 }
 
-                
-                
             }
         }
-
     }
-
     public bool IsReusable {
         get {
             return false;

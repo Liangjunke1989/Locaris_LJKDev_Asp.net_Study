@@ -14,14 +14,13 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
     /// </summary>
     public class UserInfoList : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/html";
             UserInfoBll userInfoBll = new UserInfoBll();
-            List<UserInfo> userInfoList = userInfoBll.GetUserInfoList();
+            List<UserInfoEntity> userInfoList = userInfoBll.GetUserInfoList();
             StringBuilder stringBuilder = new StringBuilder();
-            foreach (UserInfo userInfo in userInfoList)
+            foreach (UserInfoEntity userInfo in userInfoList)
             {
                 stringBuilder.AppendFormat("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td><a href='DeleteUser.ashx?id={0}' class='deletes' >删除</td></tr>", userInfo.UserId,
                     userInfo.UserName, userInfo.UserAge, userInfo.UserPwd);

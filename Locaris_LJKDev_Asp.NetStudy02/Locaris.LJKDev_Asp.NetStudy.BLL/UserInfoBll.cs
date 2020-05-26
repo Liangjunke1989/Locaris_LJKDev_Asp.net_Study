@@ -16,14 +16,14 @@ namespace Locaris.LJKDev_Asp.NetStudy.BLL
             userInfoDal=new UserInfoDal();
         }
 
-        public  List<UserInfo> GetUserInfoList()
+        public  List<UserInfoEntity> GetUserInfoList()
         {
             return userInfoDal.GetUserInfoList();
         }
 
-        public bool AddUserInfo(UserInfo userInfo)
+        public bool AddUserInfo(UserInfoEntity userInfoEntity)
         {
-            return userInfoDal.InsertUserInfo(userInfo)>0;
+            return userInfoDal.InsertUserInfo(userInfoEntity)>0;
         }
 
         public bool RemoveUserInfo(int userId)

@@ -21,14 +21,14 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
             string userName = context.Request.Form["txtName"];
             string userAge = context.Request.Form["txtAge"];
             string userPwd = context.Request.Form["txtPwd"];
-            UserInfo userInfo=new UserInfo()
+            UserInfoEntity userInfoEntity=new UserInfoEntity()
             {
                 UserName = userName,
                 UserAge = int.Parse(userAge),
                 UserPwd = userPwd
             };
              UserInfoBll userInfoBll=new UserInfoBll();
-             if (userInfoBll.AddUserInfo(userInfo))
+             if (userInfoBll.AddUserInfo(userInfoEntity))
              {
                  context.Response.Redirect("UserInfoList.html");
              }
