@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form method="post" action="ReadSelfAdd.ashx">
+        <input type="text" name="txtNum" value="$num" />
+        <span name="span1">$num</span>  <!--提交 表单元素 的时候，只能提交 表单元素 的value的值。<div>、<span>无法进行提交-->
+        <input type="submit" name="计算" />
+        <!--隐藏域-->  <!--//浏览器中看不到，也属于表单元素-->
+        <!--经常使用隐藏域保存上次的结果-->
+        <input type="hidden"  value="1"/>
+        
+
+        <!---表单元素-->>
+        <input type="checkbox" />
+        <input type="radio" />
+        <input type="file" />
+        <textarea>
+
+        </textarea>
+      
+    </form>
+
+
+</body>
+</html>

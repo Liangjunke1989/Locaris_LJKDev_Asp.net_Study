@@ -1,0 +1,6 @@
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJK\WebApplication1\bin\WebApplication1.dll.config
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJK\WebApplication1\bin\WebApplication1.dll
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJK\WebApplication1\bin\WebApplication1.pdb
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJK\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJK\WebApplication1\obj\Debug\WebApplication1.dll
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJK\WebApplication1\obj\Debug\WebApplication1.pdb

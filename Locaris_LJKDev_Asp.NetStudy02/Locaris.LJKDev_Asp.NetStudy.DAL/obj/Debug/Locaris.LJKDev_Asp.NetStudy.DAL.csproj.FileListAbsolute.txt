@@ -1,0 +1,9 @@
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\bin\Debug\Locaris.LJKDev_Asp.NetStudy.DAL.dll
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\bin\Debug\Locaris.LJKDev_Asp.NetStudy.DAL.pdb
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\bin\Debug\Locaris.LJKDev_Asp.NetStudy.Model.dll
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\bin\Debug\Locaris.LJKDev_Asp.NetStudy.Model.pdb
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\obj\Debug\Locaris.LJKDev_Asp.NetStudy.DAL.csprojAssemblyReference.cache
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\obj\Debug\Locaris.LJKDev_Asp.NetStudy.DAL.csproj.CoreCompileInputs.cache
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\obj\Debug\Locaris.LJKDev_Asp.NetStudy.DAL.csproj.CopyComplete
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\obj\Debug\Locaris.LJKDev_Asp.NetStudy.DAL.dll
+E:\LJK_WorkSpace\LJK_ASP.Net\Locaris_LJKDev_Asp.NetStudy\Locaris.LJKDev_Asp.NetStudy.DAL\obj\Debug\Locaris.LJKDev_Asp.NetStudy.DAL.pdb
