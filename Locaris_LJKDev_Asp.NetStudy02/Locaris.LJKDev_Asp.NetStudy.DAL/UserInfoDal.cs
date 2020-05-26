@@ -50,10 +50,16 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
             string sql = "insert into User_Info(User_Name,User_Age,User_Pwd)values(@UserName,@UserAge,@UserPwd)";
             SqlParameter[] parameters =
             {
-                new SqlParameter("@UserName", userInfoEntity.UserName),
-                new SqlParameter("@UserAge", userInfoEntity.UserAge),
-                new SqlParameter("@UserPwd", userInfoEntity.UserPwd),
+                //new SqlParameter("@UserName", userInfoEntity.UserName),
+                //new SqlParameter("@UserAge", userInfoEntity.UserAge),
+                //new SqlParameter("@UserPwd", userInfoEntity.UserPwd),
+                new SqlParameter("@UserName", SqlDbType.NVarChar,32),
+                new SqlParameter("@UserAge", SqlDbType.Int),
+                new SqlParameter("@UserPwd", SqlDbType.Int),
             };
+            parameters[0].Value = userInfoEntity.UserName;
+            parameters[1].Value = userInfoEntity.UserAge;
+            parameters[2].Value = userInfoEntity.UserPwd;
             return SqlHelper.LJK_ExecuteNonQuery(sql, CommandType.Text, parameters);
         }
         #endregion

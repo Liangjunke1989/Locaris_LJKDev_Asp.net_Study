@@ -30,7 +30,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
              UserInfoBll userInfoBll=new UserInfoBll();
              if (userInfoBll.AddUserInfo(userInfoEntity))
              {
-                 context.Response.Redirect("UserInfoList.html");
+                 context.Response.Redirect("UserInfoList.ashx");
              }
              else
              {
