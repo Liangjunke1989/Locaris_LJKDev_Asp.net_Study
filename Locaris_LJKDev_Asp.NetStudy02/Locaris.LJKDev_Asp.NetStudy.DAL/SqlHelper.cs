@@ -30,7 +30,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
                     {
                         adapter.SelectCommand.Parameters.AddRange(parameters);
                     }
-                    adapter.SelectCommand.CommandType = type;
+                    adapter.SelectCommand.CommandType = type;   //传的可能不是sql语句，可能是存储过程的名字
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
                     return dataTable;

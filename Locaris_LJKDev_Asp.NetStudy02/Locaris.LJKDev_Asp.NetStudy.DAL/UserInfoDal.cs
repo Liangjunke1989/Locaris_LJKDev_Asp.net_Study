@@ -11,20 +11,20 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
     public partial class UserInfoDal
     {
         #region 查询展示用户数据
- public List<UserInfoEntity> GetUserInfoList()
+        public List<UserInfoEntity> GetUserInfoList()
         {
             string sql = "select * from User_Info";
             CommandType type = CommandType.Text;
             DataTable dataTable = SqlHelper.LJK_GetDataTable(sql, type);
             List<UserInfoEntity> userInfoList = null;
-            if (dataTable.Rows.Count>0)
+            if (dataTable.Rows.Count > 0)
             {
-                userInfoList=new List<UserInfoEntity>();
-                UserInfoEntity userInfoEntity=null;
+                userInfoList = new List<UserInfoEntity>();
+                UserInfoEntity userInfoEntity = null;
                 foreach (DataRow dataRow in dataTable.Rows)
                 {
-                    userInfoEntity=new UserInfoEntity();
-                    LoadEntity(userInfoEntity,dataRow);
+                    userInfoEntity = new UserInfoEntity();
+                    LoadEntity(userInfoEntity, dataRow);
                     userInfoList.Add(userInfoEntity);
                 }
             }
@@ -35,18 +35,18 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         {
 
             userInfoEntity.UserId = int.Parse(dataRow["User_Id"].ToString());
-            userInfoEntity.UserAge = dataRow["User_Age"] != DBNull.Value 
+            userInfoEntity.UserAge = dataRow["User_Age"] != DBNull.Value
                 ? int.Parse(dataRow["User_Age"].ToString()) : 0;
-            userInfoEntity.UserName = dataRow["User_Name"]!=DBNull.Value
-                ?dataRow["User_Name"].ToString():string.Empty;
+            userInfoEntity.UserName = dataRow["User_Name"] != DBNull.Value
+                ? dataRow["User_Name"].ToString() : string.Empty;
             userInfoEntity.UserPwd = dataRow["User_Pwd"] != DBNull.Value
-                ? dataRow["User_Pwd"].ToString() :string.Empty;
+                ? dataRow["User_Pwd"].ToString() : string.Empty;
 
         }
- #endregion
+        #endregion
 
         #region 添加用户信息
-//添加用户数据
+        //添加用户数据
         public int InsertUserInfo(UserInfoEntity userInfoEntity)
         {
             string sql = "insert into User_Info(User_Name,User_Age,User_Pwd)values(@UserName,@UserAge,@UserPwd)";
@@ -60,11 +60,13 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         }
         #endregion
 
+        #region 删除用户信息
         public int DeleteUserInfo(int userId)
         {
             string sql = "delete from User_Info where User_Id=@UserId";
-            SqlParameter parameter=new SqlParameter("@UserId",userId);
-            return SqlHelper.LJK_ExecuteNonQuery(sql,CommandType.Text, parameter);
+            SqlParameter parameter = new SqlParameter("@UserId", userId);
+            return SqlHelper.LJK_ExecuteNonQuery(sql, CommandType.Text, parameter);
         }
+        #endregion
     }
 }
