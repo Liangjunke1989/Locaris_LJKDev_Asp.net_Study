@@ -16,7 +16,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/html";
-            //context.Response.Write("Hello World");
+            context.Response.Write("Hello World");
             
             string userName = context.Request.Form["txtName"];
             string userAge = context.Request.Form["txtAge"];
