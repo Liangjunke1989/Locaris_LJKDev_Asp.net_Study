@@ -30,10 +30,9 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
             }
             return userInfoList;
         }
-
+        //查询数据库中的值，赋值给实体类的值！目的是更加严谨，数据库中有些字段允许为空的情况！
         private void LoadEntity(UserInfoEntity userInfoEntity, DataRow dataRow)
         {
-
             userInfoEntity.UserId = int.Parse(dataRow["User_Id"].ToString());
             userInfoEntity.UserAge = dataRow["User_Age"] != DBNull.Value
                 ? int.Parse(dataRow["User_Age"].ToString()) : 0;
@@ -41,7 +40,6 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
                 ? dataRow["User_Name"].ToString() : string.Empty;
             userInfoEntity.UserPwd = dataRow["User_Pwd"] != DBNull.Value
                 ? dataRow["User_Pwd"].ToString() : string.Empty;
-
         }
         #endregion
 
