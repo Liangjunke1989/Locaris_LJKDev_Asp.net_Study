@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locaris.LJKDev_Asp.NetStudy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locaris.LJKDev_Asp.NetStudy.Model", "Locaris.LJKDev_Asp.NetStudy.Model\Locaris.LJKDev_Asp.NetStudy.Model.csproj", "{9B9053DD-0757-4186-8350-40B245C15CB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locaris.LJKDev_Asp.NetStudy.Common", "Locaris.LJKDev_Asp.NetStudy.Common\Locaris.LJKDev_Asp.NetStudy.Common.csproj", "{3123C323-B919-4B4A-972F-4D38031394D9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locaris.LJKDev_Asp.NetStudy.WebApp", "Locaris.LJKDev_Asp.NetStudy.WebApp\Locaris.LJKDev_Asp.NetStudy.WebApp.csproj", "{BFE1AA16-DB79-4CEF-95EE-7608E8A05373}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{9B9053DD-0757-4186-8350-40B245C15CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B9053DD-0757-4186-8350-40B245C15CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B9053DD-0757-4186-8350-40B245C15CB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3123C323-B919-4B4A-972F-4D38031394D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3123C323-B919-4B4A-972F-4D38031394D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3123C323-B919-4B4A-972F-4D38031394D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3123C323-B919-4B4A-972F-4D38031394D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BFE1AA16-DB79-4CEF-95EE-7608E8A05373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFE1AA16-DB79-4CEF-95EE-7608E8A05373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFE1AA16-DB79-4CEF-95EE-7608E8A05373}.Release|Any CPU.ActiveCfg = Release|Any CPU

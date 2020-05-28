@@ -110,10 +110,6 @@
       <Project>{1fdf9a6e-4374-4cf0-9f3c-b849490cb901}</Project>
       <Name>Locaris.LJKDev_Asp.NetStudy.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Locaris.LJKDev_Asp.NetStudy.Common\Locaris.LJKDev_Asp.NetStudy.Common.csproj">
-      <Project>{3123c323-b919-4b4a-972f-4d38031394d9}</Project>
-      <Name>Locaris.LJKDev_Asp.NetStudy.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Locaris.LJKDev_Asp.NetStudy.Model\Locaris.LJKDev_Asp.NetStudy.Model.csproj">
       <Project>{9b9053dd-0757-4186-8350-40b245c15cb8}</Project>
       <Name>Locaris.LJKDev_Asp.NetStudy.Model</Name>
