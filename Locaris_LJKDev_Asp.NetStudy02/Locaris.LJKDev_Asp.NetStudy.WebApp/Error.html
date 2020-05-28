@@ -2,9 +2,27 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <script src="Js/jquery-1.7.1.js"></script>
     <title></title>
+    <script type="text/javascript">
+        window.onload= function() {
+            setTimeout(change, 1000);//暂停1秒钟
+        }
+        function change() {
+            var time = document.getElementById("time").innerHTML;
+            //$('#time').text();
+            time = parseInt(time);
+            time--;
+            if (time<1) {
+                window.location.href = "userInfoList.ashx";
+            } else {
+                document.getElementById("time").innerHTML = time;
+                setTimeout(change, 1000);//暂停1秒钟
+            }
+        }
+    </script>
 </head>
 <body>
-    服务器忙！！！5秒钟后自动跳转到首页！
+    服务器忙！！！<span style="font-size: 20px;color:red" id="time">5</span>秒钟后自动跳转到<a href="UserInfoList.ashx">用户列表！</a>
 </body>
 </html>

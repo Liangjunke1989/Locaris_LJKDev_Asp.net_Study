@@ -59,11 +59,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddUserInfo.html" />
+    <Content Include="Detail.html" />
     <Content Include="Error.html" />
+    <Content Include="ShowEditUser.html" />
     <Content Include="TestDemoHtml.html" />
     <Content Include="UserInfoList.ashx" />
     <Content Include="AddUserInfo.ashx" />
     <Content Include="DeleteUser.ashx" />
+    <Content Include="ShowDetail.ashx" />
+    <Content Include="ShowEdit.ashx" />
+    <Content Include="EditUser.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,7 +91,16 @@
     <Compile Include="DeleteUser.ashx.cs">
       <DependentUpon>DeleteUser.ashx</DependentUpon>
     </Compile>
+    <Compile Include="EditUser.ashx.cs">
+      <DependentUpon>EditUser.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowDetail.ashx.cs">
+      <DependentUpon>ShowDetail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowEdit.ashx.cs">
+      <DependentUpon>ShowEdit.ashx</DependentUpon>
+    </Compile>
     <Compile Include="UserInfoList.ashx.cs">
       <DependentUpon>UserInfoList.ashx</DependentUpon>
     </Compile>

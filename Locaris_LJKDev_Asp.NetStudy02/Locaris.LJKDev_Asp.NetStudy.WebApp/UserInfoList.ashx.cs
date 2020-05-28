@@ -18,13 +18,15 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
         {
             context.Response.ContentType = "text/html";//响应文本为Html样式
 
-            UserInfoBll userInfoBll = new UserInfoBll();
-            List<UserInfoEntity> userInfoList = userInfoBll.GetUserInfoList();
+            UserInfoService userInfoService = new UserInfoService();
+            List<UserInfoEntity> userInfoList = userInfoService.GetUserInfoList();
             StringBuilder stringBuilder = new StringBuilder();
             foreach (UserInfoEntity userInfo in userInfoList)
             {
                 stringBuilder.AppendFormat("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td>" +
-                                           "<td><a href='DeleteUser.ashx?id={0}' class='deletes' >删除</td>" +
+                                           "<td><a href='DeleteUser.ashx?id={0}'  class='deletes' >删除</td>" +
+                                           "<td><a href='ShowDetail.ashx?uid={0}' >详细</td>" +
+                                           "<td><a href='ShowEdit.ashx?id={0}' >编辑</td>"+
                                            "</tr>", userInfo.UserId, userInfo.UserName, 
                     userInfo.UserAge, userInfo.UserPwd); 
             }

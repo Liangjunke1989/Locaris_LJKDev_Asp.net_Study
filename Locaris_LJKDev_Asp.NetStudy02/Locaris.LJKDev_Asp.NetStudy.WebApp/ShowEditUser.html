@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>修改用户信息</title>
+</head>
+<body>
+<form method="post" action="EditUser.ashx">
+    用户名：<input type="text" name="txtName" value="$name"/><br/>
+    密码：<input type="text" name="txtPwd" value="$pwd"/><br/>
+    年龄：<input type="text" name="txtAge" value="$age"/><br/>
+    <input type="hidden" name="txtId" value="$Id"/><br/>
+    <input type="submit" value="修改用户"/>
+</form>
+</body>
+</html>

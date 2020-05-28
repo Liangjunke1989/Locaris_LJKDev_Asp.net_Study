@@ -23,12 +23,12 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
             string userPwd = context.Request.Form["txtPwd"];
             UserInfoEntity userInfoEntity=new UserInfoEntity()
             {
-                UserName = userName,
+                UserName = userName, 
                 UserAge = int.Parse(userAge),
                 UserPwd = userPwd
             };
-             UserInfoBll userInfoBll=new UserInfoBll();
-             if (userInfoBll.AddUserInfo(userInfoEntity))
+             UserInfoService userInfoService=new UserInfoService(); 
+             if (userInfoService.AddUserInfo(userInfoEntity))
              {
                  context.Response.Redirect("UserInfoList.ashx");
              }
@@ -36,10 +36,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
              {
                  context.Response.Redirect("Error.html");
              }
-
-            
         }
-
         public bool IsReusable
         {
             get

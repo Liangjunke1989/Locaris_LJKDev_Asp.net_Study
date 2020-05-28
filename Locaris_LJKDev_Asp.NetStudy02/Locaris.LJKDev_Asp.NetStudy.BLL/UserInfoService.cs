@@ -7,11 +7,11 @@ using Locaris.LJKDev_Asp.NetStudy.Model;
 
 namespace Locaris.LJKDev_Asp.NetStudy.BLL
 {
-    public partial class UserInfoBll
+    public partial class UserInfoService
     {
         private UserInfoDal userInfoDal;
 
-        public UserInfoBll()
+        public UserInfoService()
         {
             userInfoDal=new UserInfoDal();
         }
@@ -29,6 +29,16 @@ namespace Locaris.LJKDev_Asp.NetStudy.BLL
         public bool RemoveUserInfo(int userId)
         {
             return userInfoDal.DeleteUserInfo(userId) > 0;
+        }
+
+        public UserInfoEntity GetUserInfoByUserId(int userId)
+        {
+            return userInfoDal.GetUserInfoEntity(userId);
+        }
+
+        public bool EditUserInfo(UserInfoEntity userInfoEntity)
+        {
+            return userInfoDal.EditUserInfo(userInfoEntity)>0;
         }
 
     }

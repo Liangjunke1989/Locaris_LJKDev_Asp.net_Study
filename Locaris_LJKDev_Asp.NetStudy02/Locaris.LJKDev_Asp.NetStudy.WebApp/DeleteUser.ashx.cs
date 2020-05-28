@@ -19,17 +19,16 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
             int id;
             if (int.TryParse(context.Request.QueryString["id"],out id))
             {
-                UserInfoBll userInfoBll=new UserInfoBll();
-                if (userInfoBll.RemoveUserInfo(id))
+                UserInfoService userInfoService=new UserInfoService();
+                //根据从表现层获取的id信息，发给逻辑层进行相关逻辑操作
+                if (userInfoService.RemoveUserInfo(id))
                 {
-                    context.Response.Redirect("UserInfoList.ashx");
+                    context.Response.Redirect("UserInfoList.ashx");//重新更新用户信息页面
                 }
                 else
                 {
-                    context.Response.Write("Error.html");
+                    context.Response.Redirect("Error.html");
                 }
-
-             
             }
             else
             {
