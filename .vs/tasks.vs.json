@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "任务-Locaris.LJKDev_Asp.NetStudy",
+      "appliesTo": "Locaris_LJKDev_Asp.NetStudy02/Locaris.LJKDev_Asp.NetStudy.Common/",
+      "type": "launch"
+    }
+  ]
+}

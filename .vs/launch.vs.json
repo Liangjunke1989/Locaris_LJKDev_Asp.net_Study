@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "dll",
+      "exe": "",
+      "project": "Locaris_LJKDev_Asp.NetStudy02\\Locaris.LJKDev_Asp.NetStudy.Common\\Locaris.LJKDev_Asp.NetStudy.Common.csproj",
+      "name": "Locaris.LJKDev_Asp.NetStudy.Common.csproj"
+    }
+  ]
+}

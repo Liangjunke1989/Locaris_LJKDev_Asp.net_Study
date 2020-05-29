@@ -72,6 +72,7 @@
     <Content Include="EditUser.ashx" />
     <Content Include="2020-05-28\ProcessFileUp.ashx" />
     <Content Include="2020-05-28\MakeImage.ashx" />
+    <Content Include="2020-05-29\Thumb.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -93,6 +94,9 @@
     </Compile>
     <Compile Include="2020-05-28\ProcessFileUp.ashx.cs">
       <DependentUpon>ProcessFileUp.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-05-29\Thumb.ashx.cs">
+      <DependentUpon>Thumb.ashx</DependentUpon>
     </Compile>
     <Compile Include="AddUserInfo.ashx.cs">
       <DependentUpon>AddUserInfo.ashx</DependentUpon>
@@ -118,6 +122,10 @@
     <ProjectReference Include="..\Locaris.LJKDev_Asp.NetStudy.BLL\Locaris.LJKDev_Asp.NetStudy.BLL.csproj">
       <Project>{1fdf9a6e-4374-4cf0-9f3c-b849490cb901}</Project>
       <Name>Locaris.LJKDev_Asp.NetStudy.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Locaris.LJKDev_Asp.NetStudy.Common\Locaris.LJKDev_Asp.NetStudy.Common.csproj">
+      <Project>{a52ec2b8-9ba1-4bb8-95ed-da0da489c2e0}</Project>
+      <Name>Locaris.LJKDev_Asp.NetStudy.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Locaris.LJKDev_Asp.NetStudy.Model\Locaris.LJKDev_Asp.NetStudy.Model.csproj">
       <Project>{9b9053dd-0757-4186-8350-40b245c15cb8}</Project>
