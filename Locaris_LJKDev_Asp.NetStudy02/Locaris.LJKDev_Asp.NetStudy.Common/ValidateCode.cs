@@ -109,7 +109,8 @@ namespace Locaris.LJKDev_Asp.NetStudy.Common
                 {
                     int x = random.Next(image.Width);
                     int y = random.Next(image.Height);
-                    image.SetPixel(x, y, Color.FromArgb(random.Next()));
+                    //位置，颜色都随机生成
+                    image.SetPixel(x, y, Color.FromArgb(random.Next()));//Argb：透明度+rgb
                 }
                 //画图片的边框线
                 g.DrawRectangle(new Pen(Color.Silver), 0, 0, image.Width - 1, image.Height - 1);

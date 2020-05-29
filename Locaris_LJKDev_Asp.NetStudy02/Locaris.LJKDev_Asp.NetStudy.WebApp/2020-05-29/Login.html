@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            //前端开发，浏览器语言的重要性
+
+            //验证码的生成，现在是拼图，找拼图相对应的Common工具类
+            var validateCode = document.getElementById("validateCode");
+            validateCode.onclick= function() {
+                document.getElementById("imgCode").src = "ValidateImageCode.ashx?d="+new Date().getMilliseconds();
+            }
+        }
+    </script>
+</head>
+<body>
+<form method="post" action="UserLogin.ashx">
+    用户名：<input type="text" name="txtName"/><br/>
+    密码：<input type="password" name="txtPwd"/><br/>
+    验证码：<input type="text" name="txtCode" />
+            <img src="ValidateImageCode.ashx" id="imgCode"/>
+            <a href="javascript:void(0)" id="validateCode">看不清，更换</a>
+    <br/>
+
+    <input type="submit" value="登录"/>
+</form>
+</body>
+</html>

@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2020-05-28\FileUp.html" />
+    <Content Include="2020-05-29\Login.html" />
     <Content Include="AddUserInfo.html" />
     <Content Include="Detail.html" />
     <Content Include="Error.html" />
@@ -73,6 +74,7 @@
     <Content Include="2020-05-28\ProcessFileUp.ashx" />
     <Content Include="2020-05-28\MakeImage.ashx" />
     <Content Include="2020-05-29\Thumb.ashx" />
+    <Content Include="2020-05-29\ValidateImageCode.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -97,6 +99,9 @@
     </Compile>
     <Compile Include="2020-05-29\Thumb.ashx.cs">
       <DependentUpon>Thumb.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-05-29\ValidateImageCode.ashx.cs">
+      <DependentUpon>ValidateImageCode.ashx</DependentUpon>
     </Compile>
     <Compile Include="AddUserInfo.ashx.cs">
       <DependentUpon>AddUserInfo.ashx</DependentUpon>
