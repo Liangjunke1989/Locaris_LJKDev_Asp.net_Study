@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2020-05-28\FileUp.html" />
     <Content Include="AddUserInfo.html" />
     <Content Include="Detail.html" />
     <Content Include="Error.html" />
@@ -69,6 +70,8 @@
     <Content Include="ShowDetail.ashx" />
     <Content Include="ShowEdit.ashx" />
     <Content Include="EditUser.ashx" />
+    <Content Include="2020-05-28\ProcessFileUp.ashx" />
+    <Content Include="2020-05-28\MakeImage.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -85,6 +88,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2020-05-28\MakeImage.ashx.cs">
+      <DependentUpon>MakeImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-05-28\ProcessFileUp.ashx.cs">
+      <DependentUpon>ProcessFileUp.ashx</DependentUpon>
+    </Compile>
     <Compile Include="AddUserInfo.ashx.cs">
       <DependentUpon>AddUserInfo.ashx</DependentUpon>
     </Compile>
@@ -114,6 +123,9 @@
       <Project>{9b9053dd-0757-4186-8350-40b245c15cb8}</Project>
       <Name>Locaris.LJKDev_Asp.NetStudy.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ImageUpload\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

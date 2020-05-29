@@ -29,7 +29,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp
                                            "<td><a href='ShowEdit.ashx?id={0}' >编辑</td>"+
                                            "</tr>", userInfo.UserId, userInfo.UserName, 
                     userInfo.UserAge, userInfo.UserPwd); 
-            }
+            }  
             //读取模板文件
             string filePath = context.Request.MapPath("UserInfoList.html");
             string fileContent = File.ReadAllText(filePath);

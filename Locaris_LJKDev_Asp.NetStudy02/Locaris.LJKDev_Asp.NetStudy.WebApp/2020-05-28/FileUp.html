@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<!--"enctype="multipart/form-data": 如果要上传文件必须加上该属性，指定相应的编码。
+只有这样，用户选择的文件数据（文件流）才会放在请求报文中，发送给我服务器。表单中的
+其他表单元素（文本框等），也会发给服务器端，请求报文格式也会更改！但是服务器端还是
+按照以前的方式进行接收-->
+<form method="post" action="ProcessFileUp.ashx" enctype="multipart/form-data">
+    <input type="file" name="fileUp"/>
+    <input type="submit" value="上传"/>
+</form>
+</body>
+</html>
