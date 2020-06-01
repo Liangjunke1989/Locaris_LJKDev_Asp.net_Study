@@ -59,7 +59,54 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2020-05-28\FileUp.html" />
+    <Content Include="2020-05-29\AddUserInfo.aspx" />
+    <Content Include="2020-05-29\EditUser.aspx" />
     <Content Include="2020-05-29\Login.html" />
+    <Content Include="2020-05-29\UserInfo_WebForm.aspx" />
+    <Content Include="2020-06-01\WebDemos\flash\main_fla.swf" />
+    <Content Include="2020-06-01\WebDemos\flash\sub_fla.swf" />
+    <Content Include="2020-06-01\WebDemos\Html\News.html" />
+    <Content Include="2020-06-01\WebDemos\Html\Shownews.html" />
+    <Content Include="2020-06-01\WebDemos\images\bg_a_list_prd_dt.png" />
+    <Content Include="2020-06-01\WebDemos\images\bg_body.png" />
+    <Content Include="2020-06-01\WebDemos\images\bg_body_column.png" />
+    <Content Include="2020-06-01\WebDemos\images\bg_dotlightblue.gif" />
+    <Content Include="2020-06-01\WebDemos\images\bg_footer_column.png" />
+    <Content Include="2020-06-01\WebDemos\images\bg_header_Client.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\bg_header_company.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\bg_header_Contact.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\bg_header_Employment.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\bg_header_News.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\bg_header_Product.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\bg_header_Service.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\bg_main_column.gif" />
+    <Content Include="2020-06-01\WebDemos\images\bg_position.png" />
+    <Content Include="2020-06-01\WebDemos\images\bg_position_product.png" />
+    <Content Include="2020-06-01\WebDemos\images\bg_title_column.png" />
+    <Content Include="2020-06-01\WebDemos\images\bg_wrap_index.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\icon_dot_blue.png" />
+    <Content Include="2020-06-01\WebDemos\images\icon_dot_gray.gif" />
+    <Content Include="2020-06-01\WebDemos\images\icon_drgegray.png" />
+    <Content Include="2020-06-01\WebDemos\images\img_contact_sidebarcolumn.png" />
+    <Content Include="2020-06-01\WebDemos\images\img_copyright_column.png" />
+    <Content Include="2020-06-01\WebDemos\images\img_copyright_index.png" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_HousingSecurity.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_MaintenanceFunds.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_Mapping.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_NewHouse.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_Practitioners.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_ProjectManagement.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_Property.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_Statistics.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_StockHouse.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\img_prd_Transaction.jpg" />
+    <Content Include="2020-06-01\WebDemos\images\logo.png" />
+    <Content Include="2020-06-01\WebDemos\images\nav_column.png" />
+    <Content Include="2020-06-01\WebDemos\images\nav_index.png" />
+    <Content Include="2020-06-01\WebDemos\images\top-2.gif" />
+    <Content Include="2020-06-01\WebDemos\style\CommonStyle.css" />
+    <Content Include="2020-06-01\WebDemos\style\pageStyle.css" />
+    <Content Include="2020-06-01\WebDemos\style\style.css" />
     <Content Include="AddUserInfo.html" />
     <Content Include="Detail.html" />
     <Content Include="Error.html" />
@@ -75,6 +122,8 @@
     <Content Include="2020-05-28\MakeImage.ashx" />
     <Content Include="2020-05-29\Thumb.ashx" />
     <Content Include="2020-05-29\ValidateImageCode.ashx" />
+    <Content Include="2020-05-29\Delete.ashx" />
+    <Content Include="2020-06-01\WebDemos\images\vssver2.scc" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -97,8 +146,32 @@
     <Compile Include="2020-05-28\ProcessFileUp.ashx.cs">
       <DependentUpon>ProcessFileUp.ashx</DependentUpon>
     </Compile>
+    <Compile Include="2020-05-29\AddUserInfo.aspx.cs">
+      <DependentUpon>AddUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-05-29\AddUserInfo.aspx.designer.cs">
+      <DependentUpon>AddUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-05-29\Delete.ashx.cs">
+      <DependentUpon>Delete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-05-29\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-05-29\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="2020-05-29\Thumb.ashx.cs">
       <DependentUpon>Thumb.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-05-29\UserInfo_WebForm.aspx.cs">
+      <DependentUpon>UserInfo_WebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-05-29\UserInfo_WebForm.aspx.designer.cs">
+      <DependentUpon>UserInfo_WebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="2020-05-29\ValidateImageCode.ashx.cs">
       <DependentUpon>ValidateImageCode.ashx</DependentUpon>

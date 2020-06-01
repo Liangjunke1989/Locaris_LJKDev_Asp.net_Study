@@ -1,9 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Locaris_LJKDev_Asp.NetStudy01",
-    "\\Locaris_LJKDev_Asp.NetStudy02"
+    "\\Locaris_LJKDev_Asp.NetStudy02",
+    "\\Locaris_LJKDev_Asp.NetStudy02\\Locaris.LJKDev_Asp.NetStudy.BLL\\obj",
+    "\\Locaris_LJKDev_Asp.NetStudy02\\Locaris.LJKDev_Asp.NetStudy.Common",
+    "\\Locaris_LJKDev_Asp.NetStudy02\\Locaris.LJKDev_Asp.NetStudy.Common\\Properties",
+    "\\Locaris_LJKDev_Asp.NetStudy02\\Locaris.LJKDev_Asp.NetStudy.WebApp",
+    "\\Locaris_LJKDev_Asp.NetStudy02\\Locaris.LJKDev_Asp.NetStudy.WebApp\\2020-05-29"
   ],
-  "SelectedNode": "\\Locaris_LJKDev_Asp.NetStudy02\\Locaris_LJKDev_Asp.NetStudy.sln",
+  "SelectedNode": "\\Locaris_LJKDev_Asp.NetStudy02\\Locaris.LJKDev_Asp.NetStudy.DAL",
   "PreviewInSolutionExplorer": false
 }
