@@ -105,7 +105,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
                 new SqlParameter("@UserName", SqlDbType.NVarChar,32),
                 new SqlParameter("@UserAge", SqlDbType.Int),
                 new SqlParameter("@UserPwd", SqlDbType.Int),
-                new SqlParameter("@UserId",SqlDbType.Int), 
+                new SqlParameter("@UserId",SqlDbType.Int),
             };
             parameters[0].Value = userInfoEntity.UserName;
             parameters[1].Value = userInfoEntity.UserAge;
@@ -115,6 +115,51 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         }
         #endregion
 
+        #region 分页查询用户数据信息
+        /// <summary>
+        ///  根据指定的范围，获取指定的数据
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
+        public List<UserInfoEntity> GetPageList(int start, int end)
+        {
+            string sql = "select * from (select * , row_number() over( order by User_Id ) as num from User_Info ) as t " +
+                         "where t.num >=@start and t.num<=@end";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@start", SqlDbType.Int),
+                new SqlParameter("@end", SqlDbType.Int),
+            };
+            parameters[0].Value = start;
+            parameters[1].Value = end;
+            DataTable dataTable = SqlHelper.LJK_GetDataTable(sql, parameters);
+            List<UserInfoEntity> userInfoEntitieList = null; ;
+            if (dataTable.Rows.Count > 0)
+            {
+                userInfoEntitieList = new List<UserInfoEntity>();
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    UserInfoEntity userInfo = new UserInfoEntity();
+                    LoadEntity(userInfo, dataRow);
+                    userInfoEntitieList.Add(userInfo);
+                }
+            }
+            return userInfoEntitieList;
+        }
+        #endregion
 
+        #region 获取总的记录数
+        /// <summary>
+        /// 获取总的记录数
+        /// </summary>
+        /// <returns></returns>
+        public int GetRecordCount()
+        {
+            string sql = "select count (*) from User_Info";
+            object executeScalar = SqlHelper.ExecuteScalar(sql, CommandType.Text);
+            return Convert.ToInt32(executeScalar);
+        }
+        #endregion
     }
 }

@@ -11,7 +11,6 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
 
     public static class SqlHelper
     {
-
         #region 获取连接字符串
         private static string GetConnetionSqlString()
         {
@@ -60,6 +59,23 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         #endregion
 
 
+        public static object ExecuteScalar(string sql, CommandType type, params SqlParameter[] parameters)
+        {
+            using (SqlConnection conn=new SqlConnection(GetConnetionSqlString()))
+            {
+                using (SqlCommand cmd=conn.CreateCommand())
+                {
+                    conn.Open();
+                    cmd.CommandText = sql;
+                    if (parameters!=null)
+                    {
+                        cmd.Parameters.AddRange(parameters);
+                    }
+                    cmd.CommandType = type;
+                    return cmd.ExecuteScalar();
+                }
+            }
+        }
     }
 
 }
