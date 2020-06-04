@@ -114,6 +114,9 @@
     <Content Include="2020-06-03\ShowUrl.html" />
     <Content Include="2020-06-03\UrlRefer.aspx" />
     <Content Include="2020-06-03\ViewStateDemo.aspx" />
+    <Content Include="2020-06-04\CookieDemo.aspx" />
+    <Content Include="2020-06-04\CookieDemo2.aspx" />
+    <Content Include="2020-06-04\Login.aspx" />
     <Content Include="AddUserInfo.html" />
     <Content Include="Detail.html" />
     <Content Include="Error.html" />
@@ -217,6 +220,27 @@
     </Compile>
     <Compile Include="2020-06-03\ViewStateDemo.aspx.designer.cs">
       <DependentUpon>ViewStateDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-04\CookieDemo.aspx.cs">
+      <DependentUpon>CookieDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-04\CookieDemo.aspx.designer.cs">
+      <DependentUpon>CookieDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-04\CookieDemo2.aspx.cs">
+      <DependentUpon>CookieDemo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-04\CookieDemo2.aspx.designer.cs">
+      <DependentUpon>CookieDemo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-04\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-04\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddUserInfo.ashx.cs">
       <DependentUpon>AddUserInfo.ashx</DependentUpon>
