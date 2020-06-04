@@ -109,6 +109,11 @@
     <Content Include="2020-06-01\WebDemos\style\CommonStyle.css" />
     <Content Include="2020-06-01\WebDemos\style\pageStyle.css" />
     <Content Include="2020-06-01\WebDemos\style\style.css" />
+    <Content Include="2020-06-03\Child.aspx" />
+    <Content Include="2020-06-03\ServerDemo.aspx" />
+    <Content Include="2020-06-03\ShowUrl.html" />
+    <Content Include="2020-06-03\UrlRefer.aspx" />
+    <Content Include="2020-06-03\ViewStateDemo.aspx" />
     <Content Include="AddUserInfo.html" />
     <Content Include="Detail.html" />
     <Content Include="Error.html" />
@@ -184,6 +189,34 @@
     </Compile>
     <Compile Include="2020-06-01\NewList.aspx.designer.cs">
       <DependentUpon>NewList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-03\Child.aspx.cs">
+      <DependentUpon>Child.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-03\Child.aspx.designer.cs">
+      <DependentUpon>Child.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-03\ServerDemo.aspx.cs">
+      <DependentUpon>ServerDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-03\ServerDemo.aspx.designer.cs">
+      <DependentUpon>ServerDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-03\UrlRefer.aspx.cs">
+      <DependentUpon>UrlRefer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-03\UrlRefer.aspx.designer.cs">
+      <DependentUpon>UrlRefer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-03\ViewStateDemo.aspx.cs">
+      <DependentUpon>ViewStateDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-03\ViewStateDemo.aspx.designer.cs">
+      <DependentUpon>ViewStateDemo.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddUserInfo.ashx.cs">
       <DependentUpon>AddUserInfo.ashx</DependentUpon>

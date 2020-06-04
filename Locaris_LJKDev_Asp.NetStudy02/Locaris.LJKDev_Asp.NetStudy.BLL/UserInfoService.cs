@@ -92,7 +92,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.BLL
 
         #region 获取总的记录数
         /// <summary>
-        /// 获取总的页数
+        /// 获取总的页数，根据数据库的数据可以分多少页
         /// </summary>
         /// <param name="pageSize">每页显示的记录数</param>
         /// <returns></returns>

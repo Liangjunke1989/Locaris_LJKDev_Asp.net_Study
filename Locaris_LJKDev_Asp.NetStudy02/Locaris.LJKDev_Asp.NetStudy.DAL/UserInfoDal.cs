@@ -115,7 +115,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         }
         #endregion
 
-        #region 分页查询用户数据信息
+        #region 查询，分页查询用户数据信息
         /// <summary>
         ///  根据指定的范围，获取指定的数据
         /// </summary>
@@ -124,6 +124,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         /// <returns></returns>
         public List<UserInfoEntity> GetPageList(int start, int end)
         {
+            //通过子查询来实现
             string sql = "select * from (select * , row_number() over( order by User_Id ) as num from User_Info ) as t " +
                          "where t.num >=@start and t.num<=@end";
             SqlParameter[] parameters =

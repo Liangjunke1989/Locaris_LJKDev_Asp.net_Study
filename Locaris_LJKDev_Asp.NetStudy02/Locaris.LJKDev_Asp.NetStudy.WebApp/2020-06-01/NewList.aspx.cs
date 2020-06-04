@@ -20,18 +20,22 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp._2020_06_01
             int pageSize = 3;
             int pageIndex;
             
+            //01_如果开始浏览器未收到请求的数据时，默认将开始页设为第一页
             if (!int.TryParse(Request.QueryString["pageIndex"], out pageIndex))
             {
                 pageIndex = 1;
             }
-            UserInfoService userInfoService=new UserInfoService();
-            int pageCount = userInfoService.GetPageCount(pageSize);//获取总页数
+            //02_得到当前页pageIndex,并对当前页码的值的范围进行判断，确保当前页的值正确
+            UserInfoService userInfoService =new UserInfoService();
+            //02_01获取总页数
+            int pageCount = userInfoService.GetPageCount(pageSize);
             PageCount = pageCount;
-            //对当前页码值得范围进行判断
+            //02_02获取当前页的正确取值范围（上一页，下一页不能无限点击）
             pageIndex = pageIndex < 1 ? 1 : pageIndex; 
             pageIndex = pageIndex > pageCount ? pageCount : pageIndex;
             PageIndex = pageIndex;
-            List<UserInfoEntity> userInfoList = userInfoService.GetPageList(pageIndex,pageSize);//获取分页数据
+            //03_根据当前页和页面的取多少个数，获取分页数据
+            List<UserInfoEntity> userInfoList = userInfoService.GetPageList(pageIndex,pageSize);
             StringBuilder stringBuilder=new StringBuilder();
             foreach (var userInfo in userInfoList)
             {
