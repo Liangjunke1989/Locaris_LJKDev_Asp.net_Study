@@ -117,6 +117,10 @@
     <Content Include="2020-06-04\CookieDemo.aspx" />
     <Content Include="2020-06-04\CookieDemo2.aspx" />
     <Content Include="2020-06-04\Login.aspx" />
+    <Content Include="2020-06-05\SessionDemo.aspx" />
+    <Content Include="2020-06-05\Test.aspx" />
+    <Content Include="2020-06-05\UserInfoList.aspx" />
+    <Content Include="2020-06-05\UserLogin.aspx" />
     <Content Include="AddUserInfo.html" />
     <Content Include="Detail.html" />
     <Content Include="Error.html" />
@@ -134,6 +138,7 @@
     <Content Include="2020-05-29\ValidateImageCode.ashx" />
     <Content Include="2020-05-29\Delete.ashx" />
     <Content Include="2020-06-01\WebDemos\images\vssver2.scc" />
+    <Content Include="2020-06-05\Login_ValidateImageCode.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -241,6 +246,37 @@
     </Compile>
     <Compile Include="2020-06-04\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-05\Login_ValidateImageCode.ashx.cs">
+      <DependentUpon>Login_ValidateImageCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-05\SessionDemo.aspx.cs">
+      <DependentUpon>SessionDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-05\SessionDemo.aspx.designer.cs">
+      <DependentUpon>SessionDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-05\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-05\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-05\UserInfoList.aspx.cs">
+      <DependentUpon>UserInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-05\UserInfoList.aspx.designer.cs">
+      <DependentUpon>UserInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-05\UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-05\UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddUserInfo.ashx.cs">
       <DependentUpon>AddUserInfo.ashx</DependentUpon>

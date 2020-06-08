@@ -13,7 +13,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.Common
 {
     public class ValidateCode
     {
-        public ValidateCode()
+        public  ValidateCode()
         {
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.Common
         /// </summary>
         /// <param name="length">指定验证码的长度</param>
         /// <returns></returns>
-        public string CreateValidateCode(int length)
+        public static  string CreateValidateCode(int length)
         {
             int[] randMembers = new int[length];
             int[] validateNums = new int[length];
@@ -79,7 +79,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.Common
         /// </summary>
         /// <param name="containsPage">要输出到的page对象</param>
         /// <param name="validateNum">验证码</param>
-        public void CreateValidateGraphic(string validateCode, HttpContext context)
+        public static void CreateValidateGraphic(string validateCode, HttpContext context)
         {
             Bitmap image = new Bitmap((int)Math.Ceiling(validateCode.Length * 12.0), 22);
             Graphics g = Graphics.FromImage(image);

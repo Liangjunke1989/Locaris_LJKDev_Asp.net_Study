@@ -17,7 +17,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp._2020_06_04
             //如果我们将Cookie设置了过期时间，当用户在指定时间内访问我们的网站，属于我们网站的Cookie
             //数据会放在请求报文中发送过来，其他网站的Cookie不会发送。
 
-            //创建Cookie：
+            // 创建Cookie：
             // Response.Cookies["cp1"].Value = "LJK";
 
             /*当执行到这行代码时，会在返回的响应报文的响应头中加上一个Set-cookie：cp1=LJK;path=/;返回给浏览器，
@@ -29,9 +29,9 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp._2020_06_04
             // 删除Cookie
             // Response.Cookies["cp2"].Expires=DateTime.Now.AddDays(-1);//过期时间后，浏览器会删除Cookie
 
-            //Cookie跨域的问题（域名）
-            //Response.Cookies["cp3"].Value = "Juhnko";
-            //Response.Cookies["cp3"].Domain="www.ljk3d.com";//设置为主域的
+            // Cookie跨域的问题（域名）
+            // Response.Cookies["cp3"].Value = "Juhnko";
+            // Response.Cookies["cp3"].Domain="www.ljk3d.com";//设置为主域的
 
             //Cookie的 path
             Response.Cookies["cp3"].Value = "Juhnko";

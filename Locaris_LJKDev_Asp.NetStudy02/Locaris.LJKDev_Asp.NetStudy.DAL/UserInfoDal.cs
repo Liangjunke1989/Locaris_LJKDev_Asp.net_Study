@@ -96,6 +96,26 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         }
         #endregion
 
+        #region  根据用户名，查询用户的信息
+        public UserInfoEntity GetUserInfoEntity(string userName)
+        {
+            string sql = "select * from User_Info where User_Name=@UserName";
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@UserName", SqlDbType.Char),
+            };
+            parameters[0].Value = userName;
+            DataTable dataTable = SqlHelper.LJK_GetDataTable(sql, parameters);
+            UserInfoEntity userInfoEntity = null;
+            if (dataTable.Rows.Count > 0)
+            {
+                userInfoEntity = new UserInfoEntity();
+                LoadEntity(userInfoEntity, dataTable.Rows[0]);//根据主键Id查询只能查询到一条数据
+            }
+            return userInfoEntity;
+        }
+        #endregion
+
         #region 修改用户信息
         public int EditUserInfo(UserInfoEntity userInfoEntity)
         {

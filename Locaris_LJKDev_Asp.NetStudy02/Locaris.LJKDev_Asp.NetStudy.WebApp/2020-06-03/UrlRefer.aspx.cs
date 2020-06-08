@@ -23,7 +23,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp._2020_06_03
            // Server
             
 
-           //Session
+           //SessionDemo
         }
     }
 }
