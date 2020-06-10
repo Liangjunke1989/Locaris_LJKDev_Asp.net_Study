@@ -121,6 +121,13 @@
     <Content Include="2020-06-05\Test.aspx" />
     <Content Include="2020-06-05\UserInfoList.aspx" />
     <Content Include="2020-06-05\UserLogin.aspx" />
+    <Content Include="2020-06-09\AjaxDemo.aspx" />
+    <Content Include="2020-06-09\AjaxPostDemo.aspx" />
+    <Content Include="2020-06-09\JqueryAjax.aspx" />
+    <Content Include="2020-06-09\Login.html" />
+    <Content Include="2020-06-09\Register.aspx" />
+    <Content Include="2020-06-09\ShowDate.aspx" />
+    <Content Include="2020-06-10\JsonDemo.html" />
     <Content Include="AddUserInfo.html" />
     <Content Include="Detail.html" />
     <Content Include="Error.html" />
@@ -139,6 +146,10 @@
     <Content Include="2020-05-29\Delete.ashx" />
     <Content Include="2020-06-01\WebDemos\images\vssver2.scc" />
     <Content Include="2020-06-05\Login_ValidateImageCode.ashx" />
+    <Content Include="2020-06-09\GetDate.ashx" />
+    <Content Include="2020-06-09\CheckUserName.ashx" />
+    <Content Include="2020-06-09\UserLogin.ashx" />
+    <Content Include="2020-06-10\GetJson.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -277,6 +288,53 @@
     </Compile>
     <Compile Include="2020-06-05\UserLogin.aspx.designer.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\AjaxDemo.aspx.cs">
+      <DependentUpon>AjaxDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-09\AjaxDemo.aspx.designer.cs">
+      <DependentUpon>AjaxDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\AjaxPostDemo.aspx.cs">
+      <DependentUpon>AjaxPostDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-09\AjaxPostDemo.aspx.designer.cs">
+      <DependentUpon>AjaxPostDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\CheckUserName.ashx.cs">
+      <DependentUpon>CheckUserName.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\GetDate.ashx.cs">
+      <DependentUpon>GetDate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\JqueryAjax.aspx.cs">
+      <DependentUpon>JqueryAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-09\JqueryAjax.aspx.designer.cs">
+      <DependentUpon>JqueryAjax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-09\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\ShowDate.aspx.cs">
+      <DependentUpon>ShowDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2020-06-09\ShowDate.aspx.designer.cs">
+      <DependentUpon>ShowDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-09\UserLogin.ashx.cs">
+      <DependentUpon>UserLogin.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="2020-06-10\GetJson.ashx.cs">
+      <DependentUpon>GetJson.ashx</DependentUpon>
     </Compile>
     <Compile Include="AddUserInfo.ashx.cs">
       <DependentUpon>AddUserInfo.ashx</DependentUpon>

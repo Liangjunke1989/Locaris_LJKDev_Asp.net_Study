@@ -77,6 +77,11 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         #endregion
 
         #region  根据用户的id编号，查询用户的信息
+        /// <summary>
+        /// 根据用户ID,查询出用户信息
+        /// </summary>
+        /// <param name="id">用户Id</param>
+        /// <returns>用户信息</returns>
         public UserInfoEntity GetUserInfoEntity(int id)
         {
             string sql = "select * from User_Info where User_Id=@UserId";
@@ -97,6 +102,11 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
         #endregion
 
         #region  根据用户名，查询用户的信息
+        /// <summary>
+        /// 根据用户名称，查询返回用户信息，目前认为用户名不会重复，只能查询出单个用户信息
+        /// </summary>
+        /// <param name="userName">用户名</param>
+        /// <returns>用户信息</returns>
         public UserInfoEntity GetUserInfoEntity(string userName)
         {
             string sql = "select * from User_Info where User_Name=@UserName";
@@ -110,7 +120,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
             if (dataTable.Rows.Count > 0)
             {
                 userInfoEntity = new UserInfoEntity();
-                LoadEntity(userInfoEntity, dataTable.Rows[0]);//根据主键Id查询只能查询到一条数据
+                LoadEntity(userInfoEntity, dataTable.Rows[0]);//目前只能认为根据userName查询只能查询到一条数据
             }
             return userInfoEntity;
         }

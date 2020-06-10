@@ -45,6 +45,7 @@
     <Compile Include="CheckSession.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="MD5Helper.cs" />
     <Compile Include="PageBarHelper.cs" />
     <Compile Include="ImageClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

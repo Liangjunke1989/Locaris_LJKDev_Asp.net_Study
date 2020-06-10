@@ -65,6 +65,18 @@ namespace Locaris.LJKDev_Asp.NetStudy.BLL
 
         #endregion
 
+        #region 根据Name，查询用户信息
+        /// <summary>
+        /// 根据用户ID获取用户信息
+        /// </summary>
+        /// <param name="userName">用户名称</param>
+        /// <returns></returns>
+        public UserInfoEntity GetUserInfoByUserName(string userName)
+        {
+            return userInfoDal.GetUserInfoEntity(userName);
+        }
+        #endregion
+
         #region 修改
         /// <summary>
         /// 修改用户信息，用户id不变

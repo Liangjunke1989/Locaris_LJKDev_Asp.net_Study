@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Js/jquery-1.7.1.js"></script>
+    <script type="text/javascript">
+        $(function () { 
+            //处理json数据
+            $("#btnGetJsonData00").click(function() {
+                $.post("GetJson.ashx", {},                   //不需要给一般处理程序添加任何数据
+                    function(data) {                         //回调函数
+                       // alert(data);
+                       alert("从Json拿到的用户名是："+data.Name);
+                    },"json");
+            });
+            $("#btnGetJsonData01").click(function() {
+                $.post("GetJson.ashx", {},                    //不需要给一般处理程序添加任何数据
+                    function(data) {                          //回调函数
+                        // alert(data);
+                        var serverData = $.parseJSON(data);   // 将json格式的字符串转成json对象
+                        alert("从Json01拿到的用户名是："+serverData.Name);
+                    });
+            });
+            $("#btnGetJsonData02").click(function() {
+                $.getJSON("GetJson.ashx", {},                 //不需要给一般处理程序添加任何数据
+                    function(data) {                          //回调函数
+                        alert("从Json02拿到的用户名是："+data.Name);
+                    });
+            });
+            $("#btnAjaxGetJsonData").click(function() {
+                $.ajax({
+                    type: "Post",                    //请求的类型
+                    url: "GetJson.ashx",             //地址
+                   // data: "name=LJK&pwd=12345",    //数据
+                    success: function (msg) {         //回调函数
+                        var serverData = $.parseJSON(msg);
+                        alert("从Ajax拿到的用户名是："+serverData.Name);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button"  value="获取Json数据00" id="btnGetJsonData00"/><br/><br/>
+    <input type="button"  value="获取Json数据01" id="btnGetJsonData01"/><br/><br/>
+<input type="button"  value="获取Json数据02" id="btnGetJsonData02"/><br/><br/>
+<input type="button"  value="获取Json数据_Ajax" id="btnAjaxGetJsonData"/><br/><br/>
+</body>
+</html>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>自动登录</title>
     <script type="text/javascript">
         window.onload= function() {
             document.getElementById("validateCode").onclick= function() {
@@ -20,9 +20,12 @@
         <div>
             用户名：<input type="text" name="txtName"/><br/>
             密码：<input type="password" name="txtPwd"/><br/>
-            验证码：<input type="text" name="txtCode"/><img src="Login_ValidateImageCode.ashx" id="imgCode"/><a href="javascript:void(0)" id="validateCode">看不清，更换</a><br/>
-            <input type="submit" value="登录"/><span style="font-size: 14px; color: red">
-                <%=Msg %>
+            验证码：<input type="text" name="txtCode"/><img src="Login_ValidateImageCode.ashx" id="imgCode"/>
+            <a href="javascript:void(0)" id="validateCode">看不清，更换</a><br/>
+            <input type="submit" value="登录"/>
+            <input type="checkbox" name="autoLogin" value="auto"/>自动登录
+            <span style="font-size: 14px; color: red">
+                <%=Msg %>  
             </span>
         </div>
     </form>

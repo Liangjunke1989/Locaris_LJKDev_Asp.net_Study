@@ -19,7 +19,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp._2020_06_05
             {
                 string name = Request.Form["txtName"];
                 Session["userName"] = name;
-                Session.Timeout=30;//过期时间为“滑动过期时间”
+                Session.Timeout=30;//过期时间为“滑动过期时间”30min
                 Response.Redirect("Test.aspx");
             }
 

@@ -10,6 +10,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.WebApp._2020_06_05
 {
     public partial class UserInfoList : Common.CheckSession
     {
+        //做初始化 首先执行Common.CheckSession中的Page_Init()代码
         protected void Page_Load(object sender, EventArgs e)
         {
             //if (Session["userInfo"]==null)
