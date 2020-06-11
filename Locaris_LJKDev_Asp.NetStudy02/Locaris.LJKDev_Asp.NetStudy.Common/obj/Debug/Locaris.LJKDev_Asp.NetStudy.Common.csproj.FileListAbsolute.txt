@@ -3,4 +3,3 @@ E:\LJK_WorkSpace\LJK_ASP.NetStudy\Locaris_LJKDev_Asp.net_Study\Locaris_LJKDev_As
 E:\LJK_WorkSpace\LJK_ASP.NetStudy\Locaris_LJKDev_Asp.net_Study\Locaris_LJKDev_Asp.NetStudy02\Locaris.LJKDev_Asp.NetStudy.Common\obj\Debug\Locaris.LJKDev_Asp.NetStudy.Common.csproj.CoreCompileInputs.cache
 E:\LJK_WorkSpace\LJK_ASP.NetStudy\Locaris_LJKDev_Asp.net_Study\Locaris_LJKDev_Asp.NetStudy02\Locaris.LJKDev_Asp.NetStudy.Common\obj\Debug\Locaris.LJKDev_Asp.NetStudy.Common.dll
 E:\LJK_WorkSpace\LJK_ASP.NetStudy\Locaris_LJKDev_Asp.net_Study\Locaris_LJKDev_Asp.NetStudy02\Locaris.LJKDev_Asp.NetStudy.Common\obj\Debug\Locaris.LJKDev_Asp.NetStudy.Common.pdb
-E:\LJK_WorkSpace\LJK_ASP.NetStudy\Locaris_LJKDev_Asp.net_Study\Locaris_LJKDev_Asp.NetStudy02\Locaris.LJKDev_Asp.NetStudy.Common\obj\Debug\Locaris.LJKDev_Asp.NetStudy.Common.csprojAssemblyReference.cache
