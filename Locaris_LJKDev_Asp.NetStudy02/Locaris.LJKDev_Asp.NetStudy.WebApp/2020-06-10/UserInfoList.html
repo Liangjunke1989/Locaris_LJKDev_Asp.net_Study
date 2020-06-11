@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<!--前端框架的应用——代码学习-->
+<head>
+    <meta charset="utf-8" />
+    <title>用户列表展示</title>
+    <link href="../CSS/tableStyle.css" rel="stylesheet" />
+    <link href="../CSS/themes/default/easyui.css" rel="stylesheet" />
+    <link href="../CSS/pageBarStyle.css" rel="stylesheet" />
+    <link href="../CSS/themes/icon.css" rel="stylesheet" />
+
+    <script src="../Js/jquery-1.7.1.js"></script>
+    <script src="../Js/jquery.easyui.min.js"></script>
+    <script src="../Js/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //1.将Div隐藏，等需要的时候再显示出来
+            $("#detailDiv").css("display", "none");
+            $("#addUserDiv").css("display", "none");
+            $("#editUserDiv").css("display", "none");
+            //2.加载所有用户列表信息
+            LoadUserInfo(1);
+            //3.为添加按钮“添加用户”绑定添加事件
+            $("#addUserInfo").click(function() {
+                blindAddClick();
+            });
+        });
+        //00_"查询"，加载所有用户数据
+        function LoadUserInfo(pageIndex) {
+            $.post("UserInfoList.ashx",
+                {"pageIndex":pageIndex},
+                function (data) {
+                    var serverData = $.parseJSON(data); //将json格式的字符串转成json对象，json对象是一个数组
+                    var serverDataLength = serverData.myUserInfoList.length;
+                    for (var i = 0; i < serverDataLength; i++) {
+                        $("<tr><td>" + serverData.myUserInfoList[i].UserId + "</td>" +
+                            "<td>" + serverData.myUserInfoList[i].UserName + "</td>" +
+                            "<td>" + serverData.myUserInfoList[i].UserPwd + "</td>" +
+                            "<td>" + serverData.myUserInfoList[i].UserAge + "</td>" +
+                            "<td><a href='javascript:void(0)' class='deletes' " +
+                            "dId='" + serverData.myUserInfoList[i].UserId + "'> 删除 </a></td>" + //删除的时候，查找到要删除对象的Id，将所有要删除的对象执行<a></a>绑定事件
+                            "<td><a href='javascript:void(0)' class='details' " +
+                            "nId='" + serverData.myUserInfoList[i].UserId + "'> 详细 </a></td>" +
+                            "<td><a href='javascript:void(0)' class='edits' " +
+                            "eId='" + serverData.myUserInfoList[i].UserId + "'> 修改 </a></td></tr>").appendTo("#tableList");
+                    }
+                    //将页码条添加到Div上
+                    $("#pageBarDiv").html(serverData.myPageBar);
+                    //注意：一定要在表格中所有的数据加载完成，才能给表格中的超链接加单击事件！
+                    bindMyPageBarClick();//给数字页码加单击事件
+                    bindDetailClick();   //绑定查询事件。根据userId查询，详细信息展示。
+                    bindDeleteClick();   //绑定删除事件。
+                    bindEditClick();     //绑定编辑事件。
+
+                    //alert(data);//data为json格式的字符串
+                });
+        }
+        //01_"查询"，根据UserId查询用户信息,展示此用户的userInfo的用户信息
+        function bindDetailClick() {
+                $(".details").click(function () {
+                    var id = $(this).attr("nId");
+                    $.post("ShowDetail.ashx",
+                        {"id":id},                                           //通过Id，往后台发送请求，在json对象中查询出相关信息
+                        function (data) {
+                            var serverData = $.parseJSON(data);
+                            $("#userName").text(serverData.UserName);
+                            $("#userPwd").text(serverData.UserPwd);
+                            $("#userAge").text(serverData.UserAge);
+                            //将详细页的Div显示出来
+                            $("#detailDiv").css("display", "block");
+                            $("#detailDiv").dialog({
+                                width: 300,
+                                height: 300,
+                                title: "用户详细信息",
+                                collapsible: true, //可折叠，可收缩
+                                maximizable: true, //可以最大化
+                                resizable: true, //可改变尺寸
+                                modal: true, //模式的
+                                buttons: [
+                                    {
+                                        text: 'Ok',
+                                        iconCls: 'icon-ok',
+                                        handler: function () {
+                                            alert('ok');
+                                        }
+                                    }, {
+                                        text: 'Cancel',
+                                        handler: function () {
+                                            $('#detailDiv').dialog('close');
+                                        }
+                                    }
+                                ]
+                            });
+                        });
+                });
+            }
+        //02_"删除", 根据Id删除表格中的用户信息
+        function bindDeleteClick() {
+            $(".deletes").click(function () {
+                var id = $(this).attr("dId");    //拿到要删除对象的Id
+                $.messager.confirm("删除提示！", "你确定要删除该记录吗？", function (r) {
+                    if (r) {   //如果该条件成立，表示用户单击了“确定”按钮
+                        $.post("DeleteUser.ashx", { "id": id }, function (data) {
+                            if (data == "ok") {
+                                //先清除表格中原有的数据
+                                $("#tableList tr:gt(0)").remove();    //gt(0),tr>0的意思 表头不能删除！！！
+                                //再将新数据加载到表格上
+                                LoadUserInfo();
+                                $.messager.show({
+                                    title: '提示',
+                                    msg: '删除成功！',
+                                    showType: 'show'
+                                });
+                            } else {
+                                $.messager.alert("提示", "删除失败！！", "error");
+                            }
+                        });
+                    }
+                });
+            });
+        }
+        //03_01"添加"，首先展示调取出“添加用户表单”
+        function blindAddClick() {
+            $("#addUserDiv").css("display", "block");
+            $("#addUserDiv").dialog({
+                width: 300,
+                height: 300,
+                title: "用户详细信息",
+                collapsible: true,                               //可折叠，可收缩
+                maximizable: true,                               //可以最大化
+                resizable: true,                                 //可改变尺寸
+                modal: true,                                     //模式的
+                buttons: [
+                    {
+                        text: 'Ok',
+                        iconCls: 'icon-ok',
+                        handler: function() {
+                            //alert('ok');                         //如果"ok"的话，执行此方法
+                            //获取用户在添加表单中输入的数据，然后同Ajax发送到服务端！
+                            addUser();
+                        }
+                    }, {
+                        text: 'Cancel',
+                        handler: function() {
+                            $('#addUserDiv').dialog('close');
+                        }
+                    }
+                ]
+            });
+        }
+        //03_02"添加"，“添加用户表单”中的添加操作
+        function addUser() {
+            // 03_02_01首先获取用户在添加表单中输入的数据
+            var pars = $("#addUserForm").serializeArray();      //这个地方很重要！！！！返回Json数据结构数据，json格式。pars为数组
+            $.post("AddUserInfo.ashx",pars,                     //发送异步请求！！！
+                function(data) {
+                    if (data == "ok") {
+                        //01_清除“添加表单”中的输入数据
+                        $("#addUserForm input").val("");
+                        //02_删除表格中旧的数据
+                        $("#tableList tr:gt(0)").remove();
+                        //03_重新加载数据添加到table表格中
+                        LoadUserInfo();
+                        //04_关闭“添加表单”窗口
+                        $("#addUserDiv").dialog("close");
+                    } else {
+                        $.messager.alert("提示", "添加失败", "error");
+                    }
+                });
+        }
+
+        //04_01"编辑"，首先根据用户Id，展示编辑表格中的用户信息
+        function bindEditClick() {
+            $(".edits").click(function() {                    //一定要记得为哪个选择器绑定点击事件
+                var id = $(this).attr("eId");                 //这个很关键，this的用法，atrr获取用户的id
+                $.post("ShowDetail.ashx", {"id":id }, function(data) {
+                        var serverData = $.parseJSON(data);
+                        $("#editUserId").val(serverData.UserId);
+                        $("#editUserName").val(serverData.UserName);
+                        $("#editUserPwd").val(serverData.UserPwd);
+                        $("#editUserAge").val(serverData.UserAge);
+                        $("#editUserDiv").css("display", "block");
+                        $("#editUserDiv").dialog({
+                            width: 300,
+                            height: 300,
+                            title: "用户修改数据",
+                            collapsible: true,                               //可折叠，可收缩
+                            maximizable: true,                               //可以最大化
+                            resizable: true,                                 //可改变尺寸
+                            modal: true,                                     //模式的
+                            buttons: [
+                                {
+                                    text: 'Ok',
+                                    iconCls: 'icon-ok',
+                                    handler: function() {
+                                       // alert('ok');       //如果"ok"的话，执行
+                                        editUserInfo();
+                                    }
+                                }, {
+                                    text: 'Cancel',
+                                    handler: function() {
+                                        $('#editUserDiv').dialog('close');
+                                    }
+                                }
+                            ]
+                        });
+                    });
+            });
+        }
+        //04_02"编辑"，在“编辑用户表单”中进行编辑操作，完成数据更新
+        function editUserInfo() {
+            var pars = $("#editUserForm").serializeArray();
+            $.post("EditUserInfo.ashx",pars, function(data) {
+                if (data == "ok") {
+                    //关闭当前编辑窗口
+                    $("#editUserDiv").dialog("close");
+                    //删除表格中旧数据
+                    $("#tableList tr:gt(0)").remove();
+                    //重新给表格添加数据
+                    LoadUserInfo();
+                } else {
+                    $.messager.alert("提示", "修改失败", "error");
+                }
+            });
+        }
+
+        //****05_给数字页面添加单击事件****
+        function bindMyPageBarClick() {
+            //05_01每个数字都有一个超链接，为每个超链接都绑定一个点击事件
+            $(".myPageBar").click(function () {
+                //05_02获取到当前页的页码
+                var pageIndex = $(this).attr("href").split('=')[1];
+                //05_03删除用户信息列表tableList中的故有数据
+                $("#tableList tr:gt(0)").remove();
+                //05_04根据当前页编号加载用户信息到tableList中
+                LoadUserInfo(pageIndex);
+                return false;
+            });
+        }
+    </script>
+</head>
+    <div>
+        <!------------添加用户信息超链接标签------------------>
+        <a href="javascrip:void(0)" id="addUserInfo">添加用户</a>
+
+        <!------------查询所有用户信息列表------------------>
+        <table id="tableList">
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>密码</th>
+                <th>删除</th>
+                <th>详细</th>
+                <th>编辑</th>
+            </tr>
+        </table>
+        
+        <!------------pageBar信息------------------>
+        <div id="pageBarDiv" class=""></div>
+
+        <!------------查询详细信息------------------>
+        <div id="detailDiv">
+            <table>
+                <tr>
+                    <td>用户名</td>
+                    <td><span id="userName"></span></td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><span id="userPwd"></span></td>
+                </tr>
+                <tr>
+                    <td>年龄</td>
+                    <td><span id="userAge"></span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!------------添加用户信息------------------>
+        <div id="addUserDiv">
+            <form id="addUserForm">
+                <table>
+                    <tr><td>用户名</td><td><input type="text" name="txtUserName"/></td></tr>
+                    <tr><td>密码</td><td><input type="password" name="txtUserPwd"/></td></tr>
+                    <tr><td>年龄</td><td><input type="text" name="txtUserAge"/></td></tr>
+                </table>
+            </form>
+        </div>
+        
+        <!------------修改用户信息------------------>
+        <div id="editUserDiv">
+            <form id="editUserForm">
+                <input type="hidden" name="txtEditUserId" id="editUserId"/>        
+                <table>
+                    <tr><td>用户名</td><td><input type="text" name="txtEditUserName" id="editUserName"/></td></tr>
+                    <tr><td>密码</td><td><input type="text" name="txtEditUserPwd" id="editUserPwd"/></td></tr>
+                    <tr><td>年龄</td><td><input type="text" name="txtEditUserAge" id="editUserAge"/></td></tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+</html>

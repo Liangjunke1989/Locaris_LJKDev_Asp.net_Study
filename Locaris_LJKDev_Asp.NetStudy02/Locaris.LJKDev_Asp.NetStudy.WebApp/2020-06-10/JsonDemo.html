@@ -6,12 +6,12 @@
     <script src="../Js/jquery-1.7.1.js"></script>
     <script type="text/javascript">
         $(function () { 
-            //处理json数据
+            //处理json数据的四种方式
             $("#btnGetJsonData00").click(function() {
                 $.post("GetJson.ashx", {},                   //不需要给一般处理程序添加任何数据
                     function(data) {                         //回调函数
                        // alert(data);
-                       alert("从Json拿到的用户名是："+data.Name);
+                       alert("从Json00拿到的用户名是："+data.Name);
                     },"json");
             });
             $("#btnGetJsonData01").click(function() {

@@ -35,7 +35,7 @@ namespace Locaris.LJKDev_Asp.NetStudy.Common
             //03_01为页面添加"上一页"超链接
             if (pageIndex > 1)
             {
-                stringBuilder.AppendFormat("<a href='NewList.aspx?pageIndex={0}'>上一页</a>", pageIndex - 1);
+                stringBuilder.AppendFormat("<a href='?pageIndex={0}'>上一页</a>", pageIndex - 1);//更灵活，什么也不写，更具通用性。//href='?pageIndex={0}'当前页
             }
             //03_02为页面添加<a></a>超链接
             for (int i = start; i <= end; i++)
@@ -48,13 +48,13 @@ namespace Locaris.LJKDev_Asp.NetStudy.Common
                 else
                 {
                     //03_02_02把其他页都添加上超链接<a></a>标签
-                    stringBuilder.AppendFormat("<a href='NewList.aspx?pageIndex={0}'> {0} </a>  ", i);
+                    stringBuilder.AppendFormat("<a href='?pageIndex={0}' class='myPageBar'> {0} </a>  ", i);
                 }
             }
             //03_03为页面添加"下一页"超链接
             if (pageIndex < pageCount)
             {
-                stringBuilder.AppendFormat("<a href='NewList.aspx?pageIndex={0}'>下一页</a>", pageIndex + 1);
+                stringBuilder.AppendFormat("<a href='?pageIndex={0}' class='myPageBar'>下一页</a>", pageIndex + 1);
             }
 
             //04_返回字符串
