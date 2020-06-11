@@ -44,15 +44,14 @@
                             "<td><a href='javascript:void(0)' class='edits' " +
                             "eId='" + serverData.myUserInfoList[i].UserId + "'> 修改 </a></td></tr>").appendTo("#tableList");
                     }
+                    //注意：一定要在表格中所有的数据加载完成，才能给表格中的超链接加单击事件！
+
                     //将页码条添加到Div上
                     $("#pageBarDiv").html(serverData.myPageBar);
-                    //注意：一定要在表格中所有的数据加载完成，才能给表格中的超链接加单击事件！
                     bindMyPageBarClick();//给数字页码加单击事件
                     bindDetailClick();   //绑定查询事件。根据userId查询，详细信息展示。
                     bindDeleteClick();   //绑定删除事件。
                     bindEditClick();     //绑定编辑事件。
-
-                    //alert(data);//data为json格式的字符串
                 });
         }
         //01_"查询"，根据UserId查询用户信息,展示此用户的userInfo的用户信息
@@ -95,6 +94,7 @@
                 });
             }
         //02_"删除", 根据Id删除表格中的用户信息
+
         function bindDeleteClick() {
             $(".deletes").click(function () {
                 var id = $(this).attr("dId");    //拿到要删除对象的Id
@@ -234,7 +234,7 @@
                 $("#tableList tr:gt(0)").remove();
                 //05_04根据当前页编号加载用户信息到tableList中
                 LoadUserInfo(pageIndex);
-                return false;
+                return false;                        //**不进行跳转？？
             });
         }
     </script>
