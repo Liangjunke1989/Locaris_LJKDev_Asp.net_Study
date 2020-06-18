@@ -51,6 +51,19 @@ namespace Locaris.LJKDev_Asp.NetStudy.BLL
         }
         #endregion
 
+        #region 删除
+        /// <summary>
+        /// 根据用户对象删除用户信息
+        /// </summary>
+        /// <param name="userInfo">用户对象</param>
+        /// <returns></returns>
+        public bool RemoveUserInfo(UserInfoEntity userInfo)
+        {
+            return userInfoDal.DeleteUserInfo(userInfo.UserId) > 0;
+        }
+
+        #endregion
+
         #region 根据Id，查询单条用户信息
         /// <summary>
         /// 根据用户ID获取用户信息
@@ -116,6 +129,11 @@ namespace Locaris.LJKDev_Asp.NetStudy.BLL
             int pageCount = Convert.ToInt32(Math.Ceiling((double)recoredCount / pageSize));
             return pageCount;
         }
+
+        public int GetRecordCount()
+        {
+            return userInfoDal.GetRecordCount();//获取总的记录数
+        }
         #endregion
 
         #region 通过用户名查询用户信息，完成用户信息的校验
@@ -155,5 +173,18 @@ namespace Locaris.LJKDev_Asp.NetStudy.BLL
         }
         #endregion
 
+
+        #region 获取ListView的分页
+        /// <summary>
+        /// 获取ListView的分页数据
+        /// </summary>
+        /// <param name="startRowIndex"></param>
+        /// <param name="maximumRows"></param>
+        /// <returns></returns>
+        public List<UserInfoEntity> GetPageListView(int startRowIndex, int maximumRows)
+        {
+            return userInfoDal.GetPageListView(startRowIndex, maximumRows);
+        }
+        #endregion
     }
 }

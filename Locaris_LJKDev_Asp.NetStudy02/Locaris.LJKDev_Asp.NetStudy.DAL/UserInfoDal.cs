@@ -192,5 +192,38 @@ namespace Locaris.LJKDev_Asp.NetStudy.DAL
             return Convert.ToInt32(executeScalar);
         }
         #endregion
+
+        #region 获取ListView获取指定范围数据
+        /// <summary>
+        /// 为ListView获取指定范围数据
+        /// </summary>
+        /// <returns></returns>
+        public List<UserInfoEntity> GetPageListView(int startRowIndex, int maximumRows)
+        {
+            string sql = "select * from (select *,Row_Number() over (order by User_Id) as row_num From dbo.User_Info) as t " +
+                         "where t.row_num>@startRowIndex and t.row_num <=@startRowIndex + @maximumRows";
+
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@startRowIndex", SqlDbType.Int),
+                new SqlParameter("@maximumRows", SqlDbType.Int),
+            };
+            parameters[0].Value = startRowIndex;
+            parameters[1].Value = maximumRows;
+            DataTable dataTable = SqlHelper.LJK_GetDataTable(sql, parameters);
+            List<UserInfoEntity> userInfoEntitieList = null; ;
+            if (dataTable.Rows.Count > 0)
+            {
+                userInfoEntitieList = new List<UserInfoEntity>();
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    UserInfoEntity userInfo = new UserInfoEntity();
+                    LoadEntity(userInfo, dataRow);
+                    userInfoEntitieList.Add(userInfo);
+                }
+            }
+            return userInfoEntitieList;
+        }
+ #endregion
     }
 }

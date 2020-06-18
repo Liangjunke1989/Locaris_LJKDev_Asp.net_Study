@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs" Inherits="Locaris.LJKDev_Asp.NetStudy.WebApp._2020_06_12.MainMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../Js/jquery-1.7.1.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div style=" background:aqua; width: 100%; height: 30px;font-size: 14px;color: red";  >
+                <table style="width: 80%" >
+                    <tr><td>首页</td><td>产品</td><td>案例</td><td>地址</td></tr>
+                </table>
+            </div>
+            <hr style="width: 80%" />
+            <div style="background:bisque; width: 100%; height: 210px;" align="center">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+
+                </asp:ContentPlaceHolder>
+            </div>
+            <hr style="width: 80%" />
+            <div style="background: aqua; width: 100%; height: 30px;font-size: 14px;color: blue" align="center">
+                <table style="width: 80%"  >
+                    <tr><td>联系</td><td>邮箱</td><td>QQ</td><td>微信</td></tr>
+                </table>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>

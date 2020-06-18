@@ -1,0 +1,4 @@
+﻿LJK_DK
+koko
+juhnko
+//经常读取，节省资源

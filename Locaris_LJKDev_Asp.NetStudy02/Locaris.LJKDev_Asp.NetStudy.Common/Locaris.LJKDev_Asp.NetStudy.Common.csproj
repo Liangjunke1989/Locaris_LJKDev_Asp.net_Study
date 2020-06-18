@@ -50,6 +50,7 @@
     <Compile Include="ImageClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidateCode.cs" />
+    <Compile Include="ValidateSessionHttpModule.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
